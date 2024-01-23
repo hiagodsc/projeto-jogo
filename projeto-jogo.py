@@ -1,20 +1,22 @@
 """
-Trabalho em grupo.
+Trabalho em grupo
 Turma: 20
 Grupo: C
 Desafio: Desenvolver um jogo de adivinha
 """
 
-import random
+from random import randint
 from time import sleep
+
+# função do jogo de adivinhação de um número
 def jogo_adivinhacao():
     try:
-
+        # solicita ao usuário que digite um número de 1 até 100
         jogador = int(input('||  Digite um número de 1 a 100: '))
-        computador = random.randint(0, 100)
+        computador = randint(0, 100)
         
-        while True:
-            
+        
+        while True:            
             if jogador < computador:
                 print(f'INCORRETO! Tente novamente.')
                 jogador = int(input('||  Digite um número MAIOR: '))
@@ -24,6 +26,7 @@ def jogo_adivinhacao():
                 continue
             elif jogador == computador:
                 print(f'VOCÊ ACERTOU!')
+                print('FIM DE JOGO!')
                 break
 
     except:

@@ -1,3 +1,10 @@
+"""
+Trabalho em grupo.
+Turma: 20
+Grupo: C
+Desafio: Desenvolver um jogo de adivinha
+"""
+
 import random
 from time import sleep
 def jogo_adivinhacao():

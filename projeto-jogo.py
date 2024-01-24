@@ -5,18 +5,19 @@ def jogo_adivinhacao():
 
         jogador = int(input('||  Digite um número de 1 a 100: '))
         computador = random.randint(0, 100)
-        
+
         while True:
-            
+
             if jogador < computador:
-                print(f'INCORRETO! Tente novamente.')
-                jogador = int(input('||  Digite um número MAIOR: '))
+                print('||{: ^36}||'.format('INCORRETO! Tente Novamente.'))
+                jogador = int(input('||    Digite um número MAIOR: '))
             elif jogador > computador:
-                print(f'INCORRETO! Tente novamente.')
-                jogador = int(input('||  Digite um número MENOR: '))
+                print('||{: ^36}||'.format('INCORRETO! Tente Novamente.'))
+                jogador = int(input('||    Digite um número MENOR: '))
                 continue
             elif jogador == computador:
-                print(f'VOCÊ ACERTOU!')
+                print('||{: ^36}||'.format('VOCÊ ACERTOU!'))
+                print('=' * 40)
                 break
 
     except:

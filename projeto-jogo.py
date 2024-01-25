@@ -23,7 +23,7 @@ def jogo_adivinhacao():
 
             while tentativas < 5:
                 if jogador == computador:
-                    print(f'VOCÊ ACERTOU!')
+                    print(f'VOCÊ VENCEU COM {tentativas} TENTATIVA(S)!!!')
                     print('FIM DE JOGO!')
                     print('=' * 40)
                     break

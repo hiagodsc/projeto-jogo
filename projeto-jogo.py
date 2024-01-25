@@ -1,84 +1,90 @@
 """
-Trabalho em grupo
+Trabalho em grupo.
 Turma: 20
 Grupo: C
 Desafio: Desenvolver um jogo de adivinha
 """
 
-from random import randint
+import random
 from time import sleep
 
 
-# função do jogo de adivinhação de um número
+# função do jogo de adivinhação de um número entre 1 e 100
 def jogo_adivinhacao():
     while True:
         try:
-            # número de tentativas
+            # Número de tentativas
             tentativas = 1
 
-            # solicita ao usuário que digite um número de 1 até 100
-            jogador = int(input('||  Digite um número de 1 a 100: '))
+            # Solicitação ao usuário de um número de 1 até 100
+            jogador = int(input('||          Digite um número de 1 a 100: '))
 
-            computador = randint(1, 100)
+            computador = random.randint(1, 100)
 
-            while tentativas < 5:
-                if jogador == computador:
-                    print(f'VOCÊ VENCEU COM {tentativas} TENTATIVA(S)!!!')
-                    print('FIM DE JOGO!')
-                    print('=' * 40)
+            while tentativas < 15:
+                if jogador < 0 or jogador > 100:
+                    print('||{: ^50}||'.format('NUMERO INVALIDO!'))
+                    # Solicitação ao usuário de um número de 1 até 100
+                    jogador = int(input('||          Digite um número de 1 a 100: '))
+
+                elif jogador == computador:
+                    if tentativas <= 5:
+                        print(f'||   Você acertou em {tentativas} tentativas! VOCÊ É SÊNIOR!   ||')
+                        
+                    elif tentativas <= 10:
+                        print(f'||    Você acertou em {tentativas} tentativas! VOCÊ É PLENO!   ||')
+                        
+                    else:
+                        print(f'||   Você acertou em {tentativas} tentativas! VOCÊ É JÚNIOR!   ||')
+
+                    print('||{: ^50}||'.format('FIM DE JOGO!'))
+                    print('=' * 54)
                     break
 
                 elif jogador < computador:
-                    print(f'INCORRETO! Tente novamente.')
-                    jogador = int(input('||  Digite um número MAIOR: '))
-                    print('=' * 40)
-
+                    print('||{: ^50}||'.format('INCORRETO! Tente Novamente.'))
+                    jogador = int(input('||          Digite um número MAIOR: '))
                 elif jogador > computador:
-                    print(f'INCORRETO! Tente novamente.')
-                    jogador = int(input('||  Digite um número MENOR: '))
-                    print('=' * 40)
+                    print('||{: ^50}||'.format('INCORRETO! Tente Novamente.'))
+                    jogador = int(input('||          Digite um número MENOR: '))
 
                 tentativas += 1
 
-                if tentativas == 5:
-                    print()
-                    print(f'Você atingiu o número máximo de tentativas.')
-                    print('O computador é o vencedor!')
-                    print('FIM DO JOGO!')
-                    print('=' * 40)
+                if tentativas == 15:
+                    print('||{: ^50}||'.format('Você atingiu o número máximo de tentativas.'))
+                    print('||{: ^50}||'.format('O computador é o vencedor!'))
+                    print('||{: ^50}||'.format('FIM DO JOGO!'))
+                    print('=' * 54)
 
-            jogar_novamente = input('Deseja jogar novamente? (S/N): ').upper()
+            jogar_novamente = input('||          Deseja jogar novamente? (S/N): ').upper()
             if jogar_novamente != 'S':
-                print('FIM DO JOGO!')
-                print('=' * 40)
+                print('||{: ^50}||'.format('FIM DO JOGO!'))
+                print('=' * 54)
                 break
 
         except:
-            print('||{: ^36}||'.format('VALOR INVÁLIDO!'))
+            print('||{: ^50}||'.format('VALOR INVÁLIDO!'))
+            print('=' * 54)
 
-        print('=' * 40)
 
-
-print('=' * 40)
-print('||{: ^36}||'.format('JOGO DA ADVINHAÇÃO'))
-print('=' * 40)
+print('=' * 54)
+print('||{: ^50}||'.format('JOGO DA ADVINHAÇÃO'))
+print('=' * 54)
 sleep(1)
 
-print('''||  Vamos jogar? Se você adivinhar ||
-||  O número que pensei, você ganha.  ||
-||  Você tem cinco tentativas.        ||''')
+print('||{: ^50}||'.format('Vamos jogar? Se  você  adivinhar'))
+print('||{: ^50}||'.format('o número que pensei, você ganha.'))
+print('||{: ^50}||'.format('Você tem 15 tentativas!'))
+print('=' * 54)
 
-print('|| ')
-print('=' * 40)
-
-print('||{: ^36}||'.format('3...'))
+print('||{: ^50}||'.format('3...'))
 sleep(0.5)
-print('||{: ^36}||'.format('2...'))
+print('||{: ^50}||'.format('2...'))
 sleep(0.5)
-print('||{: ^36}||'.format('1...'))
+print('||{: ^50}||'.format('1...'))
 sleep(0.5)
-print('||{: ^36}||'.format('Pensei'))
+print('||{: ^50}||'.format('Pensei'))
 sleep(0.5)
-print('=' * 40)
+print('=' * 54)
 
 jogo_adivinhacao()

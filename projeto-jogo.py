@@ -22,7 +22,7 @@ def jogo_adivinhacao():
             computador = random.randint(1, 100)
 
             while tentativas < 15:
-                if jogador < 0 or jogador > 100:
+                if jogador < 1 or jogador > 100:
                     print('||{: ^50}||'.format('NUMERO INVALIDO!'))
                     # Solicitação ao usuário de um número de 1 até 100
                     jogador = int(input('||          Digite um número de 1 a 100: '))

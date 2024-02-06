@@ -35,21 +35,29 @@ def jogo_adivinhacao():
                     print('||{: ^50}||'.format('FIM DE JOGO!'))
                     print('=' * 54)
                     break
+                
+                elif jogador > 100:
+                    print('||{: ^50}||'.format('Digite um número entre de 1 a 100!'))
+                    jogador = int(input('||          Digite um número de 1 a 100: '))
+                
+                elif jogador < 1:
+                    print('||{: ^50}||'.format('Digite um número entre de 1 a 100!'))
+                    jogador = int(input('||          Digite um número de 1 a 100: '))
 
                 elif jogador < computador:
                     print('||{: ^50}||'.format('INCORRETO! Tente Novamente.'))
                     jogador = int(input('||          Digite um número MAIOR: '))
+
                 elif jogador > computador:
                     print('||{: ^50}||'.format('INCORRETO! Tente Novamente.'))
-                    jogador = int(input('||          Digite um número MENOR: '))
-                    
+                    jogador = int(input('||          Digite um número MENOR: ')) 
                 
                 tentativas += 1
 
                 if tentativas == 15:
                     print('||{: ^50}||'.format('Você atingiu o número máximo de tentativas.'))
                     print('||{: ^50}||'.format('O computador é o vencedor!'))
-                    print('||{: ^50}||'.format('FIM DO JOGO!'))
+                    print('||{: ^50}||'.format('GAME OVER!'))
                     print('=' * 54)
             
             jogar_novamente = input('||          Deseja jogar novamente? (S/N): ').upper()
